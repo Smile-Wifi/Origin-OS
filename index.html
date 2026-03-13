@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galaxy Web OS</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="galaxy-bg"></div>
+
+    <header>
+        <button class="menu-btn" aria-label="Menu">
+            <i data-lucide="menu"></i>
+            <span style="margin-left: 8px; font-weight: 500; font-size: 0.9rem;">Menu</span>
+        </button>
+        <div class="logo">GalaxyOS</div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="video-container">
+                <video 
+                    src="https://assets.mixkit.co/videos/preview/mixkit-stars-in-the-night-sky-11601-large.mp4" 
+                    controls 
+                    poster="https://images.unsplash.com/photo-1464802686167-b939a6910659?auto=format&fit=crop&w=800&q=80"
+                ></video>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <section class="search-section">
+            <input type="text" class="search-bar" placeholder="Search apps...">
+        </section>
+
+        <!-- Slider Section -->
+        <section class="slider-section">
+            <div class="slider-container">
+                <div class="slider-card">
+                    <div class="circle-icon"><i data-lucide="zap"></i></div>
+                    <span class="app-name">Featured</span>
+                </div>
+                <div class="slider-card">
+                    <div class="circle-icon"><i data-lucide="trending-up"></i></div>
+                    <span class="app-name">Trending</span>
+                </div>
+                <div class="slider-card">
+                    <div class="circle-icon"><i data-lucide="star"></i></div>
+                    <span class="app-name">Top Rated</span>
+                </div>
+                <div class="slider-card">
+                    <div class="circle-icon"><i data-lucide="clock"></i></div>
+                    <span class="app-name">Recent</span>
+                </div>
+                <div class="slider-card">
+                    <div class="circle-icon"><i data-lucide="gift"></i></div>
+                    <span class="app-name">New</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Apps Section -->
+        <section class="apps-section" id="apps-section">
+            <h2 class="section-title">My Apps</h2>
+            <div class="apps-grid">
+                <a href="#" class="app-card">
+                    <div class="app-icon" style="background: #3b82f6;"><i data-lucide="graduation-cap"></i></div>
+                    <span class="app-name">CampusDC</span>
+                </a>
+                <a href="#" class="app-card">
+                    <div class="app-icon" style="background: #ef4444;"><i data-lucide="play"></i></div>
+                    <span class="app-name">SmileFlix</span>
+                </a>
+                <a href="#" class="app-card">
+                    <div class="app-icon" style="background: #10b981;"><i data-lucide="file-text"></i></div>
+                    <span class="app-name">PublicDoc</span>
+                </a>
+                <a href="#" class="app-card">
+                    <div class="app-icon" style="background: #f59e0b;"><i data-lucide="shield"></i></div>
+                    <span class="app-name">BlayneBandits</span>
+                </a>
+                <a href="#" class="app-card">
+                    <div class="app-icon" style="background: #ec4899;"><i data-lucide="mic-2"></i></div>
+                    <span class="app-name">Karaoke</span>
+                </a>
+                <a href="#" class="app-card">
+                    <div class="app-icon" style="background: #8b5cf6;"><i data-lucide="music"></i></div>
+                    <span class="app-name">Musify</span>
+                </a>
+                <a href="#" class="app-card">
+                    <div class="app-icon" style="background: #64748b;"><i data-lucide="settings"></i></div>
+                    <span class="app-name">Settings</span>
+                </a>
+                <a href="#" class="app-card">
+                    <div class="app-icon" style="background: #06b6d4;"><i data-lucide="cloud"></i></div>
+                    <span class="app-name">Weather</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <button class="home-btn" aria-label="Home">
+        <i data-lucide="home"></i>
+    </button>
+
+    <footer>
+        <p>Cached response on intranet based bandwidth linked ecosystem</p>
+    </footer>
+
+    <div class="nav-footer">
+        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHR0Z3R0Z3R0Z3R0Z3R0Z3R0Z3R0Z3R0Z3R0Z3R0Z3R0JmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJm/3o7TKVUn7iM8FMEU24/giphy.gif" alt="Mars" class="footer-gif">
+        <img src="https://picsum.photos/seed/appgrid/64/64" alt="Show Apps" class="footer-trigger" id="show-apps-trigger">
+        <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExNHR0Z3R0Z3R0Z3R0Z3R0Z3R0Z3R0Z3R0Z3R0Z3R0Z3R0JmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJmJm/l41lTfuxV5R86l8Yg/giphy.gif" alt="Earth" class="footer-gif">
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
