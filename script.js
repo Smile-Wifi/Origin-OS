@@ -38,6 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 3. Search Functionality (Simple Filter)
     const searchBar = document.querySelector('.search-bar');
     const appCards = document.querySelectorAll('.app-card');
+    const appSlides = document.querySelectorAll('.apps-slide');
 
     searchBar.addEventListener('input', (e) => {
         const term = e.target.value.toLowerCase();
@@ -45,13 +46,55 @@ document.addEventListener('DOMContentLoaded', () => {
             const name = card.querySelector('.app-name').textContent.toLowerCase();
             if (name.includes(term)) {
                 card.style.display = 'flex';
+                card.style.opacity = '1';
             } else {
                 card.style.display = 'none';
+                card.style.opacity = '0';
+            }
+        });
+
+        // Optional: Hide slides if they have no visible apps
+        appSlides.forEach(slide => {
+            const visibleApps = slide.querySelectorAll('.app-card[style*="display: flex"]');
+            if (visibleApps.length === 0 && term !== '') {
+                slide.style.display = 'none';
+            } else {
+                slide.style.display = 'grid';
             }
         });
     });
 
-    // 4. Slider Touch Swipe Support (Native scroll handles this, but we can add snap feedback)
+    // 4. App Slider Dots Logic
+    const appsSlider = document.querySelector('.apps-slider-container');
+    const dots = document.querySelectorAll('.dot');
+
+    appsSlider.addEventListener('scroll', () => {
+        const scrollLeft = appsSlider.scrollLeft;
+        const width = appsSlider.offsetWidth;
+        const activeIndex = Math.round(scrollLeft / width);
+
+        dots.forEach((dot, index) => {
+            if (index === activeIndex) {
+                dot.classList.add('active');
+            } else {
+                dot.classList.remove('active');
+            }
+        });
+    });
+
+    // Click on dots to scroll
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            const slideIndex = parseInt(dot.getAttribute('data-slide'));
+            const width = appsSlider.offsetWidth;
+            appsSlider.scrollTo({
+                left: slideIndex * width,
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // 5. Slider Touch Swipe Support (Native scroll handles this, but we can add snap feedback)
     const slider = document.querySelector('.slider-container');
     let isDown = false;
     let startX;

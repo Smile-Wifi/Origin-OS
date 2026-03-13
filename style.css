@@ -81,8 +81,21 @@ header {
     justify-content: center;
 }
 
-.logo {
+.logo-container {
+    display: flex;
+    align-items: center;
     margin-left: 1rem;
+}
+
+.header-logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    margin-right: 0.8rem;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.logo {
     font-weight: 700;
     font-size: 1.2rem;
     letter-spacing: -0.02em;
@@ -184,28 +197,66 @@ video {
     transform: scale(0.9);
 }
 
-/* Apps Grid */
+/* Apps Section */
 .apps-section {
     padding: 2rem 1rem;
     max-width: 1000px;
     margin: 0 auto;
 }
 
-.section-title {
-    font-size: 1.5rem;
+.apps-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     margin-bottom: 1.5rem;
-    padding-left: 0.5rem;
+    padding: 0 0.5rem;
 }
 
-.apps-grid {
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+}
+
+.slide-indicators {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.dot.active {
+    background: var(--accent);
+    transform: scale(1.2);
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.apps-slider-container {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 0;
+    width: 100%;
+}
+
+.apps-slide {
+    flex: 0 0 100%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 1.5rem;
+    scroll-snap-align: start;
+    padding: 0.5rem;
 }
 
 @media (min-width: 640px) {
-    .apps-grid {
-        grid-template-columns: repeat(4, 1fr);
+    .apps-slide {
+        grid-template-columns: repeat(3, 1fr); /* Keep 3x3 for Web OS feel */
     }
 }
 
